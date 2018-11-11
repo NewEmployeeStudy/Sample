@@ -3,20 +3,20 @@ package application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
 public class SampleController {
 
 	@FXML
-	private Button okBtn;
+	private Button btn01;
 	@FXML
-	private Label dispFild;
+	private Button btn02;
 	@FXML
-	private TextField name;
-	@FXML
-	public void onClckOkBtn(ActionEvent e) {
-		dispFild.setText("Hello " + name.getText());
-
+	public void onClckBtn01(ActionEvent e) {
+		new Main().changeView("Sample2.fxml");
 	}
+	@FXML
+	public void onClckBtn02(ActionEvent e) {
+		new Main().changeView("Sample3.fxml");
+	}
+
 }
