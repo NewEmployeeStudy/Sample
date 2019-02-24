@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController4">
+   <children>
+      <Button fx:id="selectBtn" layoutX="440.0" layoutY="50.0" mnemonicParsing="false" onAction="#onClickSelectBtn" prefHeight="26.0" prefWidth="122.0" text="select" />
+      <Button fx:id="backBtn" layoutX="440.0" layoutY="359.0" mnemonicParsing="false" onAction="#onClickBackBtn" prefHeight="26.0" prefWidth="122.0" text="back" />
+      <Label fx:id="label01" layoutX="22.0" layoutY="55.0" prefHeight="18.0" prefWidth="58.0" text="ファイル" />
+      <TextField fx:id="file" layoutX="74.0" layoutY="51.0" prefHeight="26.0" prefWidth="346.0" />
+      <Button fx:id="execBtn" layoutX="48.0" layoutY="360.0" mnemonicParsing="false" onAction="#onClickExecBtn" prefHeight="26.0" prefWidth="81.0" text="execute" />
+   </children>
+</AnchorPane>
