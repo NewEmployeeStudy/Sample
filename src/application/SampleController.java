@@ -11,12 +11,18 @@ public class SampleController {
 	@FXML
 	private Button btn02;
 	@FXML
+	private Button btn03;
+	@FXML
 	public void onClckBtn01(ActionEvent e) {
 		new Main().changeView("Sample2.fxml");
 	}
 	@FXML
 	public void onClckBtn02(ActionEvent e) {
 		new Main().changeView("Sample3.fxml");
+	}
+	@FXML
+	public void onClckBtn03(ActionEvent e) {
+		new Main().changeView("Sample4.fxml");
 	}
 
 }

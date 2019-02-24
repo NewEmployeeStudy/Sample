@@ -7,5 +7,6 @@
    <children>
       <Button fx:id="btn01" layoutX="54.0" layoutY="51.0" mnemonicParsing="false" onAction="#onClckBtn01" prefHeight="26.0" prefWidth="122.0" text="hello XXXX" />
       <Button fx:id="btn02" layoutX="54.0" layoutY="95.0" mnemonicParsing="false" onAction="#onClckBtn02" prefHeight="26.0" prefWidth="122.0" text="data List" />
+      <Button fx:id="btn03" layoutX="54.0" layoutY="137.0" mnemonicParsing="false" onAction="#onClckBtn03" prefHeight="26.0" prefWidth="122.0" text="data Load" />
    </children>
 </AnchorPane>
