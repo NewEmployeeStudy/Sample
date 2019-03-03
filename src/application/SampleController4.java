@@ -3,8 +3,9 @@ package application;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
+import java.util.logging.Level;
 
+import application.common.LogUtil;
 import application.dao.SampleDao;
 import application.model.Sample;
 import javafx.event.ActionEvent;
@@ -16,6 +17,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class SampleController4 {
+
+	LogUtil log = new LogUtil();
 
 	Stage stage;
 	@FXML
@@ -31,6 +34,9 @@ public class SampleController4 {
 
 	@FXML
 	public void onClickSelectBtn(ActionEvent e) {
+
+		log.log("SampleController4.onClickSelectBtn");
+
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("ファイル選択");
 		fileChooser.setInitialDirectory(new File("../"));
@@ -44,6 +50,8 @@ public class SampleController4 {
 
 	@FXML
 	public void onClickExecBtn(ActionEvent e) {
+
+		log.log("SampleController4.onClickExecBtn");
 		try {
 			File f = new File(this.file.getText());
 			BufferedReader br = new BufferedReader(new FileReader(f));
@@ -62,13 +70,15 @@ public class SampleController4 {
 			}
 			br.close();
 
-		} catch (IOException ex) {
-			System.out.println(ex);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			log.log(Level.SEVERE, "エラーが発生しました。", ex);
 		}
 	}
 
 	@FXML
 	public void onClickBackBtn(ActionEvent e) {
+		log.log("SampleController4.onClickBackBtn");
 		new Main().changeView("Sample.fxml");
 	}
 

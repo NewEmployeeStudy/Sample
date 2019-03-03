@@ -1,7 +1,9 @@
 package application;
 
 import java.util.List;
+import java.util.logging.Level;
 
+import application.common.LogUtil;
 import application.dao.SampleDao;
 import application.model.Sample;
 import javafx.collections.FXCollections;
@@ -17,6 +19,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SampleController3 implements Initializable {
+
+	LogUtil log = new LogUtil();
 
 	@FXML
 	private Button searchBtn;
@@ -39,16 +43,22 @@ public class SampleController3 implements Initializable {
 
 	@FXML
 	public void onClickSearchBtn(ActionEvent e) {
-		this.initialize();
-		SampleDao dao = new SampleDao();
-		List<Sample> lst = dao.find(id.getText());
-		for(Sample sam : lst) {
-			data.addAll(sam);
+		log.log("SampleController3.onClickSearchBtn");
+		try {
+			this.initialize();
+			SampleDao dao = new SampleDao();
+			List<Sample> lst = dao.find(id.getText());
+			for (Sample sam : lst) {
+				data.addAll(sam);
+			}
+		} catch (Exception ex) {
+			log.log(Level.SEVERE, "エラーが発生しました。", ex);
 		}
 	}
 
 	@FXML
 	public void onClickBackBtn(ActionEvent e) {
+		log.log("SampleController3.onClickBackBtn");
 		new Main().changeView("Sample.fxml");
 	}
 

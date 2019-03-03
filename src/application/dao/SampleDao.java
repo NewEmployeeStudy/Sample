@@ -16,18 +16,18 @@ public class SampleDao {
 	ResourceBundle rb = null;
 
 	public SampleDao() {
-//		try {
-//
-//			File jarPath = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath());
-//			String propertiesPath = jarPath.getParentFile().getAbsolutePath();
-//			System.out.println(" propertiesPath-" + propertiesPath);
-//		} catch (Exception e1) {
-//			e1.printStackTrace();
-//		}
-				rb = ResourceBundle.getBundle("java");
+		//		try {
+		//
+		//			File jarPath = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+		//			String propertiesPath = jarPath.getParentFile().getAbsolutePath();
+		//			System.out.println(" propertiesPath-" + propertiesPath);
+		//		} catch (Exception e1) {
+		//			e1.printStackTrace();
+		//		}
+		rb = ResourceBundle.getBundle("java");
 	}
 
-	public void insert(Sample sample) {
+	public void insert(Sample sample) throws Exception {
 		Connection con = null;
 		PreparedStatement statement = null;
 
@@ -35,7 +35,7 @@ public class SampleDao {
 			Class.forName("org.sqlite.JDBC");
 
 			con = DriverManager.getConnection(rb.getString("JDBC"));
-//			con = DriverManager.getConnection("jdbc:sqlite:G:/sample.db");
+			//			con = DriverManager.getConnection("jdbc:sqlite:G:/sample.db");
 			String sql = "insert into sample (id, pass, name) values (?,?,?);";
 			statement = con.prepareStatement(sql);
 			statement.setString(1, sample.getId());
@@ -54,7 +54,7 @@ public class SampleDao {
 					statement.close();
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				throw e;
 			}
 			try {
 				if (con != null) {
@@ -62,12 +62,12 @@ public class SampleDao {
 					con.close();
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				throw e;
 			}
 		}
 	}
 
-	public List<Sample> find(String id) {
+	public List<Sample> find(String id) throws Exception {
 		List<Sample> lst = new ArrayList<>();
 		Connection con = null;
 		PreparedStatement statement = null;
@@ -76,7 +76,7 @@ public class SampleDao {
 			Class.forName("org.sqlite.JDBC");
 
 			con = DriverManager.getConnection(rb.getString("JDBC"));
-//			con = DriverManager.getConnection("jdbc:sqlite:G:/sample.db");
+			//			con = DriverManager.getConnection("jdbc:sqlite:G:/sample.db");
 			String sql = "select * from sample ";
 			if (id != null && !id.equals("")) {
 				sql = sql.concat("where id = ?");
@@ -96,23 +96,23 @@ public class SampleDao {
 				lst.add(sample);
 			}
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			throw e;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw e;
 		} finally {
 			try {
 				if (statement != null) {
 					statement.close();
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				throw e;
 			}
 			try {
 				if (con != null) {
 					con.close();
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				throw e;
 			}
 		}
 		return lst;
