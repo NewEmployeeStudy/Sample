@@ -1,4 +1,4 @@
-package application;
+package application.Control;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.util.Optional;
 import java.util.logging.Level;
 
+import application.Main;
 import application.common.LogUtil;
 import application.dao.SampleDao;
 import application.model.Sample;

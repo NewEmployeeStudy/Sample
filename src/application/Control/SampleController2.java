@@ -1,5 +1,6 @@
-package application;
+package application.Control;
 
+import application.Main;
 import application.common.LogUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

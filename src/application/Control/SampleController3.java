@@ -1,8 +1,9 @@
-package application;
+package application.Control;
 
 import java.util.List;
 import java.util.logging.Level;
 
+import application.Main;
 import application.common.LogUtil;
 import application.dao.SampleDao;
 import application.model.Sample;
