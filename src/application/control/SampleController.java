@@ -1,4 +1,4 @@
-package application.Control;
+package application.control;
 
 import application.Main;
 import application.common.LogUtil;

@@ -1,4 +1,4 @@
-package application.Control;
+package application.control;
 
 import java.util.List;
 import java.util.logging.Level;
