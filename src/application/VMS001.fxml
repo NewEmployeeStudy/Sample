@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="1000.0" text="検索 - 大学発ベンチャー関連管理システム" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <ComboBox layoutX="724.0" layoutY="89.0" prefHeight="25.0" prefWidth="102.0" promptText="東京都" />
+            <DatePicker layoutX="562.0" layoutY="51.0" prefHeight="25.0" prefWidth="129.0" promptText="2019/02/10" showWeekNumbers="true" />
+            <Label layoutX="28.0" layoutY="93.0" text="銘柄CD" />
+            <TextField layoutX="87.0" layoutY="89.0" prefHeight="25.0" prefWidth="97.0" text="123456" />
+            <TextField layoutX="260.0" layoutY="89.0" prefHeight="25.0" prefWidth="134.0" text="123456789012" />
+            <Label layoutX="204.0" layoutY="93.0" text="法人CD" />
+            <TextField layoutX="75.0" layoutY="51.0" prefHeight="25.0" prefWidth="259.0" />
+            <Label layoutX="28.0" layoutY="55.0" text="会社名" />
+            <Label layoutX="516.0" layoutY="55.0" text="上場日" />
+            <DatePicker layoutX="722.0" layoutY="51.0" prefHeight="25.0" prefWidth="129.0" promptText="2019/02/10" showWeekNumbers="true" />
+            <Label layoutX="702.0" layoutY="55.0" text="〜" />
+            <Label layoutX="422.0" layoutY="93.0" text="関連大学" />
+            <Label layoutX="673.0" layoutY="93.0" text="所在地" />
+            <TextField layoutX="483.0" layoutY="89.0" prefHeight="25.0" prefWidth="166.0" />
+            <TableView layoutX="28.0" layoutY="130.0" prefHeight="361.0" prefWidth="942.0">
+              <columns>
+                  <TableColumn prefWidth="137.0" text="会社名" />
+                  <TableColumn prefWidth="83.0" text="銘柄CD" />
+                  <TableColumn prefWidth="85.0" text="法人CD" />
+                <TableColumn prefWidth="101.0" text="上場日" />
+                  <TableColumn prefWidth="96.0" text="市場" />
+                  <TableColumn prefWidth="102.0" text="所在地" />
+                  <TableColumn prefWidth="130.0" text="業種" />
+                  <TableColumn prefWidth="88.0" text="分類" />
+                  <TableColumn prefWidth="130.0" text="関連大学" />
+              </columns>
+            </TableView>
+            <Label layoutX="355.0" layoutY="55.0" text="市場" />
+            <ComboBox layoutX="391.0" layoutY="51.0" prefHeight="25.0" prefWidth="102.0" promptText="東証一部" />
+            <Button layoutX="886.0" layoutY="80.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="検索">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button layoutX="908.0" layoutY="14.0" mnemonicParsing="false" text="閉じる">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+         </children></AnchorPane>
+  </content>
+   <font>
+      <Font name="System Italic" size="12.0" />
+   </font>
+</TitledPane>
