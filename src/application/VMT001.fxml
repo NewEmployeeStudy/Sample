@@ -6,26 +6,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" text="大学発ベンチャー関連管理システム" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" text="大学発ベンチャー関連管理システム" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="720.0">
          <children>
-            <Button layoutX="141.0" layoutY="122.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="検索">
+            <Button fx:id="btnVms001" layoutX="141.0" layoutY="122.0" mnemonicParsing="false" onAction="#onActionVms001" prefHeight="70.0" prefWidth="150.0" text="検索" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="421.0" layoutY="122.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="詳細">
+            <Button fx:id="btnVmd001" layoutX="421.0" layoutY="122.0" mnemonicParsing="false" onAction="#onActionVmd001" prefHeight="70.0" prefWidth="150.0" text="詳細" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="421.0" layoutY="248.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="データ取込">
+            <Button fx:id="btnVmg001" layoutX="421.0" layoutY="248.0" mnemonicParsing="false" onAction="#onActionVmg001" prefHeight="70.0" prefWidth="150.0" text="データ取込" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="141.0" layoutY="248.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="メンテナンス">
+            <Button fx:id="btnVmm001" layoutX="141.0" layoutY="248.0" mnemonicParsing="false" onAction="#onAvtionVmm001" prefHeight="70.0" prefWidth="150.0" text="メンテナンス" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
