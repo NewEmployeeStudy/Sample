@@ -2,8 +2,8 @@ package application.common;
 
 /***
  * 共通ユーティリティクラス
- * @author H.Isogai
  *
+ * @author H.Isogai
  */
 public class CommonUtil {
 
