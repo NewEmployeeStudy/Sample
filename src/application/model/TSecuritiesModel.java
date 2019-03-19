@@ -42,6 +42,12 @@ public class TSecuritiesModel {
 	/***
 	 * 有価証券情報エンティティクラスコンストラクタ
 	 */
+	public TSecuritiesModel() {
+	}
+
+	/***
+	 * 有価証券情報エンティティクラスコンストラクタ
+	 */
 	public TSecuritiesModel(String stockCd, String billCd, String isinCd,
 							String articleDateFr, String articleDateTo,
 							String allIssuedStockTerms, String allIssuedStockBalance,

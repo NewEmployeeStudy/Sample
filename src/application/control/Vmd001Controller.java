@@ -2,16 +2,21 @@ package application.control;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 import application.common.CommonUtil;
 import application.common.LogUtil;
+import application.dao.Vmd001Dao;
+import application.model.MCompanyModel;
 import application.model.TSecuritiesModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /***
@@ -24,7 +29,23 @@ public class Vmd001Controller implements Initializable {
 	// ログユーティリティー
 	LogUtil log = new LogUtil();
 
-	// 企業情報詳細
+	/// 会社情報
+	// 会社名
+	@FXML
+	private TextField txtCompanyName;
+	// 銘柄コード
+	@FXML
+	private TextField txtStockCd;
+	// 法人番号
+	@FXML
+	private TextField txtCorprateNo;
+	// 設立年月日
+	@FXML
+	private TextField txtFoundationDate;
+	// 上場先市場
+	@FXML
+	private TextField txtListedMarket;
+	/// 企業情報詳細
 	@FXML
 	private TableView<TSecuritiesModel> tvCompanyDetail;
 	// 事項日付(From)
@@ -67,13 +88,32 @@ public class Vmd001Controller implements Initializable {
 	// TableViewへ格納するためのオブジェクト
 	private ObservableList<TSecuritiesModel> olData;
 
+	@FXML
+	public void onLoadfrmDetail(ActionEvent e) {
+		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
+
+		try {
+			this.initialize();
+
+			String strStockCd = null;
+
+			/// 詳細情報DAO
+			// 会社情報
+			MCompanyModel mCompany = Vmd001Dao.getHeader(strStockCd);
+			txtCompanyName.setText(mCompany.getCompanyName());
+
+		} catch (Exception ex) {
+			log.log(Level.SEVERE, "エラーが発生しました。", ex);
+		}
+	}
+
 	/***
 	 * 初期化
 	 */
-	@Override
-	public void initialize(URL url, ResourceBundle rb) {
+	public void initialize() {
 		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
 
+		/// 財務情報
 		// FX用ArrayList
 		olData = FXCollections.observableArrayList();
 
@@ -94,5 +134,13 @@ public class Vmd001Controller implements Initializable {
 		tblColStockPrice.setCellValueFactory(new PropertyValueFactory<>("stockPrice"));
 		tblColEnterpriseValue.setCellValueFactory(new PropertyValueFactory<>("enterpriseValue"));
 		tblColAllotment.setCellValueFactory(new PropertyValueFactory<>("allotment"));
+	}
+
+	/***
+	 * 初期化
+	 */
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		this.initialize();
 	}
 }
