@@ -5,9 +5,11 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 
 import application.common.CommonUtil;
+import application.common.ConstUtil;
 import application.common.LogUtil;
 import application.dao.Vmd001Dao;
 import application.model.MCompanyModel;
+import application.model.TExchangeStockCorpnoModel;
 import application.model.TSecuritiesModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,7 +40,7 @@ public class Vmd001Controller implements Initializable {
 	private TextField txtStockCd;
 	// 法人番号
 	@FXML
-	private TextField txtCorprateNo;
+	private TextField txtCorporateNo;
 	// 設立年月日
 	@FXML
 	private TextField txtFoundationDate;
@@ -101,7 +103,17 @@ public class Vmd001Controller implements Initializable {
 			// 会社情報
 			MCompanyModel mCompany = Vmd001Dao.getHeader(strStockCd);
 			txtCompanyName.setText(mCompany.getCompanyName());
+			txtStockCd.setText(mCompany.getStockCd());
+			txtFoundationDate.setText(mCompany.getFoundationDate());
+			// 上場市場名へ変換
+			txtListedMarket.setText(ConstUtil.eListMarketCd.valueOf(mCompany.getListedMarketCd()).getName());
+			TExchangeStockCorpnoModel tExchange = Vmd001Dao.getHeader(mCompany);
+			txtCorporateNo.setText(String.valueOf(tExchange.getCorporateNo()));
 
+			// 財務情報
+			for (TSecuritiesModel tSec : Vmd001Dao.getList(strStockCd)) {
+				olData.addAll(tSec);
+			}
 		} catch (Exception ex) {
 			log.log(Level.SEVERE, "エラーが発生しました。", ex);
 		}

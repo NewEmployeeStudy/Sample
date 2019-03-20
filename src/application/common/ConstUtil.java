@@ -17,7 +17,7 @@ public class ConstUtil {
 	 * 上場市場コード
 	 * @author H.Isogai
 	 */
-	enum eListMarketCd {
+	public enum eListMarketCd {
 		TOKYO1("01", "東証１部"),
 		TOKYO2("02", "東証２部"),
 		MOTHERS("03", "マザーズ"),
@@ -47,7 +47,7 @@ public class ConstUtil {
 		 * 上場市場コードを取得
 		 * @return
 		 */
-		String getCode() {
+		public String getCode() {
 			return code;
 		}
 
@@ -55,7 +55,7 @@ public class ConstUtil {
 		 * 上場市場名称を取得
 		 * @return
 		 */
-		String getName() {
+		public String getName() {
 			return name;
 		}
 	}

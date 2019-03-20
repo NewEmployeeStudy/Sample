@@ -42,12 +42,12 @@
       </Label>
       <TextField fx:id="txtCompanyName" layoutX="136.0" layoutY="45.0" prefHeight="27.0" prefWidth="353.0" />
       <TextField fx:id="txtStockCd" layoutX="136.0" layoutY="71.0" prefHeight="27.0" prefWidth="70.0" />
-      <Label id="lblCorprateNo" layoutX="248.0" layoutY="76.0" text="法人番号">
+      <Label id="lblCorporateNo" layoutX="248.0" layoutY="76.0" text="法人番号">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCorprateNo" layoutX="329.0" layoutY="71.0" prefHeight="27.0" prefWidth="160.0" />
+      <TextField fx:id="txtCorporateNo" layoutX="329.0" layoutY="71.0" prefHeight="27.0" prefWidth="160.0" />
       <Label id="lblFoundationDate" layoutX="49.0" layoutY="102.0" text="設立年月日">
          <font>
             <Font size="14.0" />

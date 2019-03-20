@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import application.model.MCompanyModel;
+import application.model.TExchangeStockCorpnoModel;
 import application.model.TSecuritiesModel;
 
 /***
@@ -92,6 +93,46 @@ public class Vmd001Dao {
 	}
 
 	/***
+	 * 画面表示ヘッダ情報
+	 * @param mCompany
+	 * @return
+	 * @throws SQLException
+	 */
+	public static TExchangeStockCorpnoModel getHeader(MCompanyModel mCompany) throws SQLException {
+
+		// SQLの組み立て
+		StringBuilder sbSQLStmt = new StringBuilder();
+
+		sbSQLStmt.append("SELECT * FROM T_EXCHANGESTOCKCORPNO ");
+		sbSQLStmt.append("WHERE STOCKCD = ? ");
+
+		preStat = conn.prepareStatement(sbSQLStmt.toString());
+		preStat.setString(1, mCompany.getStockCd());
+
+		// SQLの実行
+		ResultSet rs = preStat.executeQuery();
+
+		// レコードが存在していれば、会社マスタエンティティクラスにデータを格納
+		TExchangeStockCorpnoModel tExchange = new TExchangeStockCorpnoModel();
+		if(rs.next()) {
+			tExchange.setCorporateNo(rs.getInt("CORPORATENO"));
+			tExchange.setCorporateName(rs.getString("CORPORATENAME"));
+		}
+
+		// ResultSet オブジェクトのクローズ
+		if(rs != null) {
+			rs.close();
+		}
+
+		// PreparedStatement オブジェクトのクローズ
+		if(preStat != null) {
+			preStat.close();
+		}
+
+		return tExchange;
+	}
+
+	/***
 	 * 画面表示リスト情報
 	 * @param stockCd 銘柄コード
 	 * @return List<TSecuritiesModel> 財務情報リスト
@@ -105,7 +146,7 @@ public class Vmd001Dao {
 		StringBuilder sbSQLStmt = new StringBuilder();
 
 		sbSQLStmt.append("SELECT * FROM T_SECURITIES ");
-		sbSQLStmt.append("WHERE STOCEED = ? ");
+		sbSQLStmt.append("WHERE STOCKCD = ? ");
 
 		preStat = conn.prepareStatement(sbSQLStmt.toString());
 		preStat.setString(1,  stockCd);
