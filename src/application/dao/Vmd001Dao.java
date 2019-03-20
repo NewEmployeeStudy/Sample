@@ -189,35 +189,4 @@ public class Vmd001Dao {
 
 		return tSecuritiesList;
 	}
-
-	/***
-	 * 会社マスタ更新処理
-	 * @param mCompany 会社マスタエンティティクラス
-	 * @return
-	 * @throws SQLException
-	 */
-	public static void regist(MCompanyModel mCompany) throws SQLException {
-
-		// SQLの組み立て
-		StringBuilder sbSQLStmt = new StringBuilder();
-
-		sbSQLStmt.append("INSERT OR REPLACE INTO M_COMPANY ");
-		sbSQLStmt.append("(STOCKCD, BILLCD, ISINCD, COMPANYNAME, FOUNDATIONDATE, LISTEDMARKET, LISTEDDATE) ");
-		sbSQLStmt.append("VALUES ");
-		sbSQLStmt.append("(?, ?, ?, ?, ?, ?, ?) ");
-
-		preStat = conn.prepareStatement(sbSQLStmt.toString());
-		preStat.setString(1, mCompany.getStockCd());		// 銘柄コード
-		preStat.setString(2, mCompany.getBillCd());			// 新証券コード
-		preStat.setString(3, mCompany.getIsinCd());			// ISINコード
-		preStat.setString(4, mCompany.getCompanyName());	// 企業名
-		preStat.setString(5, mCompany.getFoundationDate());	// 設立年月日
-		preStat.setString(6, mCompany.getListedMarketCd());	// 上場市場コード
-		preStat.setString(7, mCompany.getListedDate());		// 上場年月日
-
-		preStat.executeUpdate();
-
-		// 更新内容のコミット
-		conn.commit();
-	}
 }
