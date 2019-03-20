@@ -28,7 +28,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class Vmd001Controller implements Initializable {
 
-	// ログユーティリティー
+	// ログユーティリティ
 	LogUtil log = new LogUtil();
 
 	/// 会社情報
