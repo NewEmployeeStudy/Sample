@@ -39,7 +39,7 @@ public class Vmt001Controller {
 	@FXML
 	public void onActionVms001(ActionEvent e) {
 		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
-		new Main().changeView("view/VMD001.fxml");
+		new Main().changeView("view/VMS001.fxml");
 	}
 
 	/***
@@ -47,8 +47,8 @@ public class Vmt001Controller {
 	 */
 	@FXML
 	public void onActionVmd001(ActionEvent e) {
-//		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
-//		new Main().changeView("VMD001.fxml");
+		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
+		new Main().changeView("view/VMD001.fxml");
 	}
 
 	/***
@@ -57,7 +57,7 @@ public class Vmt001Controller {
 	@FXML
 	public void onActionVmm001(ActionEvent e) {
 		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
-		new Main().changeView("viewVMM001.fxml");
+		new Main().changeView("view/VMM001.fxml");
 	}
 
 	/***
