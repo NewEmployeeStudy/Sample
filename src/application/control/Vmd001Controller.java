@@ -127,7 +127,7 @@ public class Vmd001Controller implements Initializable {
 	public void onActionBack(ActionEvent e) {
 		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
 
-		// メニューへ戻る
+		// 検索画面へ戻る
 		new Main().changeView("view/VMS001.fxml");
 	}
 
