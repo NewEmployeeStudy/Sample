@@ -2,10 +2,11 @@ package application.control;
 
 import java.sql.SQLException;
 
+import application.Main;
 import application.common.CommonUtil;
 import application.common.ConstUtil;
 import application.common.LogUtil;
-import application.dao.Vmd001Dao;
+import application.dao.Vmm001Dao;
 import application.model.MCompanyModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,6 +50,9 @@ public class Vmm001Controller {
 	// 更新ボタン
 	@FXML
 	private Button btnRegist;
+	// 戻るボタン
+	@FXML
+	private Button btnBack;
 
 	/***
 	 * 会社マスタ更新処理
@@ -69,6 +73,17 @@ public class Vmm001Controller {
 		mCompany.setListedMarketCd(cboListedMarket.getId());			// 上場市場コード
 		mCompany.setListedDate(dpListedDate.getPromptText());			// 上場年月日
 		// 画面情報の更新
-		Vmd001Dao.regist(mCompany);
+		Vmm001Dao.regist(mCompany);
+	}
+
+	/***
+	 * 戻るボタン押下処理
+	 */
+	@FXML
+	public void onActionBack(ActionEvent e) {
+		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
+
+		// メニューへ戻る
+		new Main().changeView("view/VMT001.fxml");
 	}
 }

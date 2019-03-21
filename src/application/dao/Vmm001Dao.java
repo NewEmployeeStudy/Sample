@@ -39,9 +39,8 @@ public class Vmm001Dao {
 	}
 
 	/***
-	 * 会社マスタ更新処理
+	 * 会社マスタおよび銘柄コード法人番号対応テーブル更新処理
 	 * @param mCompany 会社マスタエンティティクラス
-	 * @return
 	 * @throws SQLException
 	 */
 	public static void regist(MCompanyModel mCompany) throws SQLException {
@@ -63,6 +62,22 @@ public class Vmm001Dao {
 		preStat.setString(6, mCompany.getListedMarketCd());	// 上場市場コード
 		preStat.setString(7, mCompany.getListedDate());		// 上場年月日
 
+		// SQLの実行
+		preStat.executeUpdate();
+
+		// SQLの組み立て
+		sbSQLStmt = new StringBuilder();
+
+		sbSQLStmt.append("INSERT OR REPLACE INTO T_EXCHANGESTOCKCORPNO ");
+		sbSQLStmt.append("(STOCKCD, CORPORATENAME) ");
+		sbSQLStmt.append("VALUES ");
+		sbSQLStmt.append("(?, ?) ");
+
+		preStat = conn.prepareStatement(sbSQLStmt.toString());
+		preStat.setString(1, mCompany.getStockCd());
+		preStat.setString(2, mCompany.getCompanyName());
+
+		// SQLの実行
 		preStat.executeUpdate();
 
 		// 更新内容のコミット

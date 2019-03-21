@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
+import application.Main;
 import application.common.CommonUtil;
 import application.common.ConstUtil;
 import application.common.LogUtil;
@@ -117,6 +118,17 @@ public class Vmd001Controller implements Initializable {
 		} catch (Exception ex) {
 			log.log(Level.SEVERE, "エラーが発生しました。", ex);
 		}
+	}
+
+	/***
+	 * 戻るボタン押下処理
+	 */
+	@FXML
+	public void onActionBack(ActionEvent e) {
+		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
+
+		// メニューへ戻る
+		new Main().changeView("view/VMS001.fxml");
 	}
 
 	/***
