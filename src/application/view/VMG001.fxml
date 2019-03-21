@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.control.Vmg001Controller">
+   <children>
+      <Button fx:id="btnSelect" layoutX="544.0" layoutY="57.0" mnemonicParsing="false" onAction="#onClickSelectBtn" prefHeight="39.0" prefWidth="82.0" text="選択">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="btnClose" layoutX="460.0" layoutY="118.0" mnemonicParsing="false" onAction="#onClickBackBtn" prefHeight="34.0" prefWidth="84.0" text="戻る">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Label fx:id="label01" layoutX="25.0" layoutY="67.0" prefHeight="18.0" prefWidth="58.0" text="ファイル" />
+      <TextField fx:id="path" disable="true" layoutX="74.0" layoutY="61.0" prefHeight="31.0" prefWidth="458.0" />
+      <Button fx:id="btnExec" layoutX="113.0" layoutY="118.0" mnemonicParsing="false" onAction="#onClickExecBtn" prefHeight="39.0" prefWidth="84.0" text="取込">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Label layoutX="30.0" layoutY="23.0" text="&lt;&lt;データ取込&gt;&gt;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

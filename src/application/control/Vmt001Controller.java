@@ -29,6 +29,9 @@ public class Vmt001Controller {
 	// データ取り込みボタン
 	@FXML
 	private Button btnVmg001;
+	// 閉じるボタン
+	@FXML
+	private Button btnClose;
 
 	/***
 	 * 検索ボタン押下時の遷移
@@ -36,7 +39,7 @@ public class Vmt001Controller {
 	@FXML
 	public void onActionVms001(ActionEvent e) {
 		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
-		new Main().changeView("VMS001.fxml");
+		new Main().changeView("view/VMD001.fxml");
 	}
 
 	/***
@@ -44,8 +47,8 @@ public class Vmt001Controller {
 	 */
 	@FXML
 	public void onActionVmd001(ActionEvent e) {
-		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
-		new Main().changeView("VMD001.fxml");
+//		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
+//		new Main().changeView("VMD001.fxml");
 	}
 
 	/***
@@ -54,15 +57,24 @@ public class Vmt001Controller {
 	@FXML
 	public void onActionVmm001(ActionEvent e) {
 		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
-		new Main().changeView("VMM001.fxml");
+		new Main().changeView("viewVMM001.fxml");
 	}
 
 	/***
 	 * データ取り込みボタン押下時の遷移
 	 */
 	@FXML
-	public void onACtionVmg001(ActionEvent e) {
+	public void onActionVmg001(ActionEvent e) {
 		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
-		new Main().changeView("VMG001.fxml");
+		new Main().changeView("view/VMG001.fxml");
+	}
+
+	/***
+	 * 閉じるボタン押下時の動作
+	 */
+	@FXML
+	public void onClickCloseBtn(ActionEvent e) {
+		log.log(String.format("%s.%s", CommonUtil.getClassName(), CommonUtil.getMethodName()));
+		new Main().close();
 	}
 }
