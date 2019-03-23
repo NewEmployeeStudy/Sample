@@ -28,4 +28,15 @@ public class CommonUtil {
 	public static String getMethodName() {
 		return Thread.currentThread().getStackTrace()[2].getMethodName();
 	}
+
+	/***
+	 * "の除去
+	 * @param 対象文字列
+	 */
+	public static String deleteDoubleQuate(String str) {
+		if (null == str) {
+			return "";
+		}
+		return str.replace("\"", "");
+	}
 }
