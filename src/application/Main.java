@@ -15,13 +15,9 @@ public class Main extends Application {
 	public void start(Stage stage) {
 		try {
 			Main.stage = stage;
-			changeView("Sample.fxml");
+			Main.stage.setTitle("大学発ベンチャー関連管理システム");
+			changeView("view/VMT001.fxml");
 			Main.stage.show();
-			//			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Sample.fxml"));
-			//			Scene scene = new Scene(root,400,400);
-			//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			//			primaryStage.setScene(scene);
-			//			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -31,11 +27,16 @@ public class Main extends Application {
 		launch(args);
 	}
 
-    public void changeView(String fxml) {
-        try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(fxml))));
-        } catch (IOException e) {
+	public void changeView(String fxml) {
+		try {
+			stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(fxml))));
+
+		} catch (IOException e) {
 			e.printStackTrace();
-        }
-    }
+		}
+	}
+
+	public void close() {
+		stage.close();
+	}
 }
